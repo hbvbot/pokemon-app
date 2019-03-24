@@ -4,17 +4,39 @@ import axios from 'axios';
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      pokemon: []
+    };
   }
 
   componentDidMount() {
     axios.post('/getpokemon').then(res => {
-      console.log(res.data);
+      this.setState({
+        pokemon: res.data.pokemons
+      });
     });
   }
 
   render() {
-    return <div />;
+    return (
+      <div>
+        <div className='row'>
+          {this.state.pokemon.map(pokemon => {
+            return (
+              <div className='col-2'>
+                <div>
+                  <img className='img-fluid' src={pokemon.image} />
+                </div>
+                <div>
+                  {pokemon.name} - {pokemon.number}
+                </div>
+                <div>Type: {JSON.stringify(pokemon.types)}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
   }
 }
 

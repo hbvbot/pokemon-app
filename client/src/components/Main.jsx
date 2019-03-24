@@ -7,7 +7,11 @@ class Main extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    axios.post('/getpokemon').then(res => {
+      console.log(res.data);
+    });
+  }
 
   render() {
     return <div />;

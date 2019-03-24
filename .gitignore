@@ -9,6 +9,7 @@
 # production
 /build
 /client/dist/bundle.js
+/client/dist/bundle.js.gz
 
 # misc
 .DS_Store

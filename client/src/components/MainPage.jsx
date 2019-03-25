@@ -32,7 +32,7 @@ class MainPage extends React.Component {
           <div className='row'>
             {this.state.pokemon.map(pokemon => {
               return (
-                <div className='col-lg-3 col-md-4 col-6 my-5 text-center'>
+                <div className='col-xl-3 col-lg-4 col-12 my-5 text-center'>
                   <Pokemon
                     image={pokemon.image}
                     name={pokemon.name}

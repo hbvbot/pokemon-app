@@ -89,7 +89,7 @@ class EvolutionPage extends React.Component {
           <div className='row mx-auto d-flex justify-content-center align-content-center'>
             {this.state.evolution.map(pokemon => {
               return (
-                <div className='col-lg-3 col-md-4 col-6 my-5 text-center'>
+                <div className='col-xl-3 col-lg-4 col-12 my-5 text-center'>
                   <Pokemon
                     image={pokemon.image}
                     name={pokemon.name}
@@ -106,7 +106,7 @@ class EvolutionPage extends React.Component {
           <div className='row'>
             {this.props.location.state.map(pokemon => {
               return (
-                <div className='col-lg-3 col-md-4 col-6 my-5 text-center'>
+                <div className='col-xl-3 col-lg-4 col-12 my-5 text-center'>
                   <Pokemon
                     image={pokemon.image}
                     name={pokemon.name}

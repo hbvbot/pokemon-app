@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Pokemon from './Pokemon';
 
 class Main extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Main extends React.Component {
 
   componentDidMount() {
     axios.post('/getpokemon').then(res => {
+      console.log(res.data);
       this.setState({
         pokemon: res.data.pokemons
       });
@@ -30,20 +32,15 @@ class Main extends React.Component {
             {this.state.pokemon.map(pokemon => {
               return (
                 <div className='col-lg-3 col-md-4 col-6 my-5 text-center'>
-                  <div className='pokemon-img-container'>
-                    <img className='pokemon-img' src={pokemon.image} />
-                  </div>
-                  <div>
-                    {pokemon.name} - {pokemon.number}
-                  </div>
-                  <div>
-                    Type:{' '}
-                    {pokemon.types.length > 1
-                      ? pokemon.types.map((type, i) => {
-                          return i === 0 ? `${type} / ` : type;
-                        })
-                      : pokemon.types[0]}
-                  </div>
+                  <Pokemon
+                    image={pokemon.image}
+                    name={pokemon.name}
+                    number={pokemon.number}
+                    types={pokemon.types}
+                    id={pokemon.id}
+                    maxCP={pokemon.maxCP}
+                    maxHP={pokemon.maxHP}
+                  />
                 </div>
               );
             })}

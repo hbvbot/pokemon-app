@@ -1,8 +1,9 @@
 body {
-  background-image: url('background.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+  background: url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  overflow: scroll;
 }
 
 .main-container {

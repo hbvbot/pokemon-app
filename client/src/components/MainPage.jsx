@@ -42,7 +42,13 @@ class MainPage extends React.Component {
                     maxCP={pokemon.maxCP}
                     maxHP={pokemon.maxHP}
                   />
-                  <Link to={`/${pokemon.id}`} href={`/${pokemon.id}`}>
+                  <Link
+                    to={{
+                      pathname: `/${pokemon.id}`,
+                      state: this.state.pokemon
+                    }}
+                    href={`/${pokemon.id}`}
+                  >
                     More Information
                   </Link>
                 </div>

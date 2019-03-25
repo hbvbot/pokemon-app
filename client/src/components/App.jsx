@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Main from './Main';
+import MainPage from './MainPage';
+import EvolutionPage from './EvolutionPage';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path='/' component={Main} />
+          <Route exact path='/' component={MainPage} />
+          <Route path='/:pokemonID' component={EvolutionPage} />
         </Switch>
       </div>
     );

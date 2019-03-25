@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Pokemon from './Pokemon';
 
-class Main extends React.Component {
+class EvolutionPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,11 +12,19 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    axios.post('/getpokemon').then(res => {
+    const pokemonID = this.props.match.params.pokemonID;
+    let pokemon, evolution;
+
+    axios.post('/getevolution', { pokemonID: pokemonID }).then(res => {
       console.log(res.data);
-      this.setState({
-        pokemon: res.data.pokemons
-      });
+    });
+
+    axios.post('/getpokemon').then(res => {
+      pokemon = res.data.pokemons;
+    });
+
+    this.setState({
+      pokemon: res.data.pokemons
     });
   }
 
@@ -41,6 +50,9 @@ class Main extends React.Component {
                     maxCP={pokemon.maxCP}
                     maxHP={pokemon.maxHP}
                   />
+                  <Link to={`/${pokemon.id}`} href={`/${pokemon.id}`}>
+                    More Information
+                  </Link>
                 </div>
               );
             })}
@@ -51,4 +63,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default EvolutionPage;

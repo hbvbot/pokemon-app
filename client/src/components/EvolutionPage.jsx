@@ -75,18 +75,18 @@ class EvolutionPage extends React.Component {
   render() {
     return (
       <div>
-        <div className='container-fluid main-container'>
-          <div className='row'>
-            <div className='col-12 pokemon-app-title text-center'>
-              Pokemon App
-            </div>
+        <div className='row'>
+          <div className='col-12 pokemon-app-title text-center'>
+            Pokemon App
           </div>
-          <div className='row'>
-            <div className='col-12 text-center'>
+        </div>
+        <div className='container-fluid main-container'>
+          <div className='row mt-5'>
+            <div className='col-12 text-center evolution-text'>
               {this.state.selectedPokemonName} Evolution Tree
             </div>
           </div>
-          <div className='row mx-auto d-flex justify-content-center align-content-center'>
+          <div className='row mx-auto d-flex justify-content-center align-content-center mb-5'>
             {this.state.evolution.map(pokemon => {
               return (
                 <div className='col-xl-3 col-lg-4 col-12 my-5 text-center'>

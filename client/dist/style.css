@@ -13,6 +13,8 @@ body {
 
 .pokemon-app-title {
   font-size: 64px;
+  color: white;
+  background-color: black;
 }
 
 .pokemon-img-container {
@@ -24,4 +26,8 @@ body {
   width: auto;
   max-height: 100%;
   max-width: 100%;
+}
+
+.evolution-text {
+  font-size: 48px;
 }

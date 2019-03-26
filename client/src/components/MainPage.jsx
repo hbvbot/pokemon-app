@@ -23,12 +23,12 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
-        <div className='container-fluid main-container'>
-          <div className='row'>
-            <div className='col-12 pokemon-app-title text-center'>
-              Pokemon App
-            </div>
+        <div className='row'>
+          <div className='col-12 pokemon-app-title text-center'>
+            Pokemon App
           </div>
+        </div>
+        <div clsassName='container-fluid main-container'>
           <div className='row'>
             {this.state.pokemon.map(pokemon => {
               return (

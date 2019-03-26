@@ -13,7 +13,6 @@ class MainPage extends React.Component {
 
   componentDidMount() {
     axios.post('/getpokemon').then(res => {
-      console.log(res.data);
       this.setState({
         pokemon: res.data.pokemons
       });

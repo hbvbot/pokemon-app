@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pokemon from './Pokemon';
+import swal from 'sweetalert2';
 
 class EvolutionPage extends React.Component {
   constructor(props) {
@@ -17,6 +18,14 @@ class EvolutionPage extends React.Component {
     const pokemonID = this.props.match.params.pokemonID;
 
     axios.post('/getevolution', { pokemonID: pokemonID }).then(res => {
+      if (res.data.pokemon.evolutions === null) {
+        swal.fire({
+          title: `${res.data.pokemon.name} does not have an evolved form!`,
+          type: 'error',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
       const evolution = [];
       const selectedPokemon = {
         image: res.data.pokemon.image,
@@ -45,6 +54,15 @@ class EvolutionPage extends React.Component {
     const pokemonID = e.target.id;
 
     axios.post('/getevolution', { pokemonID: pokemonID }).then(res => {
+      if (res.data.pokemon.evolutions === null) {
+        swal.fire({
+          title: `${res.data.pokemon.name} does not have an evolved form!`,
+          type: 'error',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+
       const evolution = [];
       const selectedPokemon = {
         image: res.data.pokemon.image,

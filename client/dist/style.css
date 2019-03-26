@@ -30,3 +30,8 @@ body {
 .evolution-text {
   font-size: 48px;
 }
+
+.pokemon-information {
+  background-color: white;
+  border: 1px solid black;
+}

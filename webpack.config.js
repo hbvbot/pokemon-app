@@ -4,7 +4,6 @@ const DIST_DIR = path.join(__dirname, '/client/dist');
 const Promise = require('es6-promise-promise');
 const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require('webpack');
 
 module.exports = {
@@ -57,12 +56,15 @@ module.exports = {
         include: SRC_DIR,
         loader: 'babel-loader',
         query: {
-          presets: ['react']
+          presets: ['react', 'es2015']
         }
       },
       {
         test: /\.css$/,
-        use: ['style-loader', { loader: 'css-loader', options: { minimize: true } }]
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { minimize: true } }
+        ]
       },
       {
         test: /\.html$/,

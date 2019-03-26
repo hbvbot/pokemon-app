@@ -19,6 +19,7 @@ body {
 .pokemon-img-container {
   height: 200px;
   background-color: white;
+  border: 1px solid black;
 }
 
 .pokemon-img {
@@ -34,4 +35,9 @@ body {
 .pokemon-information {
   background-color: white;
   border: 1px solid black;
+}
+
+.page-divider {
+  height: 2px;
+  background-color: black;
 }

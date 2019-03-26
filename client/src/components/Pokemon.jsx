@@ -11,7 +11,7 @@ class Pokemon extends React.Component {
         <div className='pokemon-img-container d-flex align-content-center justify-content-center'>
           <img className='pokemon-img' src={this.props.image} />
         </div>
-        <div className='py-3 mt-3 pokemon-information'>
+        <div className='py-3 mt-2 pokemon-information'>
           <div>
             {this.props.name} - {this.props.number}
           </div>

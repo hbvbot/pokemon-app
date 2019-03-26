@@ -121,6 +121,7 @@ class EvolutionPage extends React.Component {
               );
             })}
           </div>
+          <div className='row mb-5 page-divider' />
           <div className='row'>
             {this.props.location.state.map(pokemon => {
               return (
